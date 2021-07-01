@@ -38,9 +38,15 @@ public class InteractionTrigger : MonoBehaviour
     {
         if(collision.CompareTag("Interactable"))
         {
-            collision.GetComponent<Item>().ShowUI(true);
+            Item item = collision.GetComponent<Item>();
+            item.ShowUI(true); ;
             m_PM.Interactable = true;
-            m_PM.HoverItem = collision.gameObject;
+            m_PM.HoverItem = item;
+        }
+        if (collision.CompareTag("NPC"))
+        {
+            m_PM.Talkable = true;
+            m_PM.npc = collision.GetComponent<NPC>();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -51,6 +57,12 @@ public class InteractionTrigger : MonoBehaviour
             m_PM.Interactable = false;
             m_PM.HoverItem = null;
         }
-        
+        if (collision.CompareTag("NPC"))
+        {
+            m_PM.Talkable = false;
+            m_PM.npc = null;
+
+        }
+
     }
 }
