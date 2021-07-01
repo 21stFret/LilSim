@@ -12,7 +12,11 @@ public class PlayerMovement : MonoBehaviour
     public InteractionTrigger m_IT;
 
     public bool Interactable, ItemHeld;
-    public GameObject HoverItem, InteractItem;
+    public bool Talkable;
+    public Item InteractItem, HoverItem;
+    public NPC npc;
+
+    public bool Paused;
 
     // Start is called before the first frame update
     void Start()
@@ -23,19 +27,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+        if(!Paused)
         {
-            GetInput();
+            if (Input.GetAxisRaw("Horizontal") == 1 || Input.GetAxisRaw("Horizontal") == -1 || Input.GetAxisRaw("Vertical") == 1 || Input.GetAxisRaw("Vertical") == -1)
+            {
+                GetInput();
+            }
+            else
+            {
+                Direction = Vector2.zero;
+            }
+            if (Interactable)
+            {
+                PickupItem();
+                ChangeItem();
+            }
+            if (Talkable && !Interactable)
+            {
+                OpenTalk();
+            }
         }
-        else
-        {
-            Direction = Vector2.zero;
-        }
-        if(Interactable)
-        {
-            PickupItem();
-        }
-
 
         if (ItemHeld)
         {
@@ -50,10 +61,27 @@ public class PlayerMovement : MonoBehaviour
         m_Anim.SetFloat("Move",m_RB.velocity.magnitude);
     }
 
+    public void PauseGame(bool On)
+    {
+        if(On) { Time.timeScale = 0;}
+        else { Time.timeScale = 1; }
+        Paused = On;
+    }
+
+
     // Update is called once per frame
     void FixedUpdate()
     {
         Move(Direction);
+    }
+
+    void OpenTalk()
+    {
+        if (Input.GetKeyDown("e"))
+        {
+            TalkManager.instance.SetTalkPanel(true);
+            TalkManager.instance.SetTalkText(npc.Talk, npc.Name);
+        }
     }
 
     void PickupItem()
@@ -71,11 +99,21 @@ public class PlayerMovement : MonoBehaviour
                 print("picked up item");
                 InteractItem = HoverItem;
                 ItemHeld = true;
-                InteractItem.GetComponent<Item>().ShowUI(false);
+                InteractItem.ShowUI(false);
             }
         }   
+    }
 
-        
+    void ChangeItem()
+    {
+        if (Input.GetKeyDown("q"))
+        {
+            if (HoverItem.CustItem)
+            {
+                HoverItem.GetComponent<CutsomItem>().ChangeVariant();
+            }
+            else { print("Error not a customizable item"); }
+        }
     }
 
     void GetInput()
