@@ -9,6 +9,7 @@ public class CutsomItem : Item
     public int SelectedVariant;
     SpriteRenderer m_SR;
     public GameObject Effect;
+    public ItemT itemT;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +32,21 @@ public class CutsomItem : Item
         if (SelectedVariant == Variations.Length) { SelectedVariant = 0; }
         m_SR.sprite = Variations[SelectedVariant];
         SetItemText(Names[SelectedVariant]);
-        if(SelectedVariant ==1)
+        SetItemTInfo();
+
+        if(Effect)
         {
-            Effect.SetActive(true);
+            if (SelectedVariant == 1)
+            {
+                Effect.SetActive(true);
+            }
+            else { Effect.SetActive(false); }
         }
-        else { Effect.SetActive(false); }
+    }
+
+    void SetItemTInfo()
+    {
+        itemT.m_name = Names[SelectedVariant];
+        itemT.m_sprite = Variations[SelectedVariant];
     }
 }
