@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Animator m_Anim;
     public InteractionTrigger m_IT;
 
-    public bool Interactable, ItemHeld;
+    public bool Interactable, ItemHeld, HeldCondition;
     public bool Talkable;
     public Item InteractItem, HoverItem;
     public NPC npc;
@@ -39,18 +39,14 @@ public class PlayerMovement : MonoBehaviour
             }
             if (Interactable)
             {
-                PickupItem();
                 ChangeItem();
             }
             if (Talkable && !Interactable)
             {
                 OpenTalk();
             }
-        }
+            PickupItem();
 
-        if (ItemHeld)
-        {
-            InteractItem.transform.position = m_IT.transform.position;
         }
 
 
@@ -79,26 +75,42 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown("e"))
         {
-            TalkManager.instance.SetTalkPanel(true);
-            TalkManager.instance.SetTalkText(npc.Talk, npc.Name);
+            TalkManager TM = TalkManager.instance;
+            if (ShoppingManager.instance.TotalCost>0)
+            {
+                TM.SetTalkPanel(true);
+                TM.SetTalkText(ShoppingManager.instance.ShoppingTalk, npc.Name);
+            }
+            else
+            {
+                TM.SetTalkPanel(true);
+                TM.SetTalkText(npc.Talk, npc.Name);
+            }
         }
     }
 
     void PickupItem()
     {
+
         if (Input.GetKeyDown("e"))
         {
             if(ItemHeld)
             {
                 print("dropped item");
                 ItemHeld = false;
+                InteractItem.transform.SetParent(null,true);
+                InteractItem.gameObject.layer = LayerMask.NameToLayer("Items");
                 InteractItem = null;
+
             }
             else
             {
                 print("picked up item");
                 InteractItem = HoverItem;
                 ItemHeld = true;
+                InteractItem.gameObject.layer = LayerMask.NameToLayer("Interacted");
+                InteractItem.transform.SetParent(m_IT.transform);
+                InteractItem.transform.localPosition = new Vector3(-0.00200000009f, -0.0979999974f, 0);
                 InteractItem.ShowUI(false);
             }
         }   

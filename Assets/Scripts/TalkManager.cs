@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TalkManager : MonoBehaviour
 {
-    public GameObject TalkPanel;
+    public GameObject TalkPanel, ShopPanel;
     public Text TalkText, TalkName;
 
     public static TalkManager instance;
@@ -29,10 +29,22 @@ public class TalkManager : MonoBehaviour
     public void SetTalkPanel(bool open)
     {
         TalkPanel.SetActive(open);
+        if(ShoppingManager.instance.TotalCost>0)
+        {
+            ShopPanel.SetActive(true);
+        }
+        else
+        {
+            ShopPanel.SetActive(false);
+        }
     }
     public void SetTalkText(string text, string name)
     {
         TalkText.text = text;
         TalkName.text = name;
+    }
+    public void SetText(string text)
+    {
+        TalkText.text = text;
     }
 }
