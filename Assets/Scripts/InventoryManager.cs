@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
     public List<ItemT> InvList;
     public List<ItemT> EquipList;
     public List<EquipUI> EquipSlots;
+    public GameObject itemTPrefabHolder, Prefab;
     public GameObject[] ItemUIs;
     public GameObject InvPanel, Equip, Inv;
     bool On;
@@ -41,8 +42,12 @@ public class InventoryManager : MonoBehaviour
 
     public void AddToInv(ItemT item)
     {
-        InvList.Add(item);
+        GameObject Temp = Instantiate(Prefab, itemTPrefabHolder.transform);
+        ItemT itemT = Temp.GetComponent<ItemT>();
+        itemT.SetInfo(item.m_name, item.m_sprite, item.Type, item.stats, item.descript, item.Cost);
+        InvList.Add(itemT);
     }
+
 
     void PopulateInv()
     {
@@ -80,25 +85,37 @@ public class InventoryManager : MonoBehaviour
 
     public void EquipItem(int InvOrder)
     {
-        if(!EquipList.Contains(InvList[InvOrder]))
+        for (int x = 0; x < EquipSlots.Count; x++)
+        {
+            if(InvList[InvOrder].Type == EquipSlots[x].Type)
+            {
+                if (EquipSlots[x].m_name != "")
+                {
+                    string elname = EquipSlots[x].m_name;
+                    EquipList.Remove(EquipList.Find(el => el.m_name == elname));
+                }
+            }
+        }
+            if (EquipList.Contains(InvList[InvOrder]))
+        {
+            SortEquipment(InvList[InvOrder]);
+        }
+        else
         {
             EquipList.Add(InvList[InvOrder]);
-            SortEquipment();
+            SortEquipment(InvList[InvOrder]);
         }
     }
 
-    public void SortEquipment()
+    public void SortEquipment(ItemT itemT)
     {
-        for (int i = 0; i < EquipList.Count; i++)
+        for (int x = 0; x < EquipSlots.Count; x++)
         {
-            for (int x = 0; x < EquipSlots.Count; x++)
+            if (itemT.Type == EquipSlots[x].Type)
             {
-                if (EquipList[i].Type == EquipSlots[x].Type)
-                {
-                    EquipSlots[x].m_img.sprite = EquipList[i].m_sprite;
-                    EquipSlots[x].m_name = EquipList[i].m_name;
-                    break;
-                }
+                EquipSlots[x].m_img.sprite = itemT.m_sprite;
+                EquipSlots[x].m_name = itemT.m_name;
+                break;
             }
         }
         SetAnimSprites();
@@ -110,6 +127,38 @@ public class InventoryManager : MonoBehaviour
         if(EquipSlots[0].m_name == "Blue Bandana" && EquipSlots[3].m_name == "Red Cape")
         {
             sheetName = "12 - BH-RC";
+        }
+        if (EquipSlots[0].m_name == "Blue Bandana" && EquipSlots[3].m_name == "Blue Cape")
+        {
+            sheetName = "12 - BH-BC";
+        }
+        if (EquipSlots[0].m_name == "Blue Bandana" && EquipSlots[3].m_name == "Green Cape")
+        {
+            sheetName = "12 - BH-GC";
+        }
+        if (EquipSlots[0].m_name == "Red Bandana" && EquipSlots[3].m_name == "Red Cape")
+        {
+            sheetName = "12 - RH-RC";
+        }
+        if (EquipSlots[0].m_name == "Red Bandana" && EquipSlots[3].m_name == "Blue Cape")
+        {                            
+            sheetName = "12 - RH-BC";
+        }                            
+        if (EquipSlots[0].m_name == "Red Bandana" && EquipSlots[3].m_name == "Green Cape")
+        {
+            sheetName = "12 - RH-GC";
+        }
+        if (EquipSlots[0].m_name == "Green Bandana" && EquipSlots[3].m_name == "Red Cape")
+        {
+            sheetName = "12 - GH-RC";
+        }
+        if (EquipSlots[0].m_name == "Green Bandana" && EquipSlots[3].m_name == "Blue Cape")
+        {
+            sheetName = "12 - GH-BC";
+        }
+        if (EquipSlots[0].m_name == "Green Bandana" && EquipSlots[3].m_name == "Green Cape")
+        {
+            sheetName = "12 - GH-GC";
         }
         RSA.spriteSheetName = sheetName;
     }

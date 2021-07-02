@@ -107,11 +107,15 @@ public class PlayerMovement : MonoBehaviour
             {
                 print("picked up item");
                 InteractItem = HoverItem;
-                ItemHeld = true;
-                InteractItem.gameObject.layer = LayerMask.NameToLayer("Interacted");
-                InteractItem.transform.SetParent(m_IT.transform);
-                InteractItem.transform.localPosition = new Vector3(-0.00200000009f, -0.0979999974f, 0);
-                InteractItem.ShowUI(false);
+                if(InteractItem != null)
+                {
+                    ItemHeld = true;
+                    InteractItem.gameObject.layer = LayerMask.NameToLayer("Interacted");
+                    InteractItem.transform.SetParent(m_IT.transform);
+                    InteractItem.transform.localPosition = new Vector3(-0.00200000009f, -0.0979999974f, 0);
+                    InteractItem.ShowUI(false);
+                }
+
             }
         }   
     }

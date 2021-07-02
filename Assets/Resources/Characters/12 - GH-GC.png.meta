@@ -4,52 +4,52 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 972780734684818581
-    second: 12 - GH-GC_0
+    second: 1
   - first:
       213: -496445847331960095
-    second: 12 - GH-GC_1
+    second: 2
   - first:
       213: -8536599730123404872
-    second: 12 - GH-GC_2
+    second: 3
   - first:
       213: 2637144647561892017
-    second: 12 - GH-GC_3
+    second: 4
   - first:
       213: -6546027537374502596
-    second: 12 - GH-GC_4
+    second: 5
   - first:
       213: -1749614258427709511
-    second: 12 - GH-GC_5
+    second: 6
   - first:
       213: -6968754648731525208
-    second: 12 - GH-GC_6
+    second: 7
   - first:
       213: 3461586603880782939
-    second: 12 - GH-GC_7
+    second: 8
   - first:
       213: 4828722077139262501
-    second: 12 - GH-GC_8
+    second: 9
   - first:
       213: 1844718790810857972
-    second: 12 - GH-GC_9
+    second: 10
   - first:
       213: -8119651948667074797
-    second: 12 - GH-GC_10
+    second: 11
   - first:
       213: 3781230449839513902
-    second: 12 - GH-GC_11
+    second: 12
   - first:
       213: -2670668509981083184
-    second: 12 - GH-GC_12
+    second: 13
   - first:
       213: 4330957154173380444
-    second: 12 - GH-GC_13
+    second: 14
   - first:
       213: 8161302282356608230
-    second: 12 - GH-GC_14
+    second: 15
   - first:
       213: 8144562569761860391
-    second: 12 - GH-GC_15
+    second: 16
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 12 - GH-GC_0
+      name: 1
       rect:
         serializedVersion: 2
         x: 11
@@ -157,7 +157,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,7 +170,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_1
+      name: 2
       rect:
         serializedVersion: 2
         x: 59
@@ -178,7 +178,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,7 +191,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_2
+      name: 3
       rect:
         serializedVersion: 2
         x: 107
@@ -199,7 +199,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,7 +212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_3
+      name: 4
       rect:
         serializedVersion: 2
         x: 155
@@ -220,7 +220,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,7 +233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_4
+      name: 5
       rect:
         serializedVersion: 2
         x: 10
@@ -241,7 +241,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,7 +254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_5
+      name: 6
       rect:
         serializedVersion: 2
         x: 58
@@ -262,7 +262,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,7 +275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_6
+      name: 7
       rect:
         serializedVersion: 2
         x: 106
@@ -283,7 +283,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,7 +296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_7
+      name: 8
       rect:
         serializedVersion: 2
         x: 154
@@ -304,7 +304,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -317,7 +317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_8
+      name: 9
       rect:
         serializedVersion: 2
         x: 8
@@ -325,7 +325,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,7 +338,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_9
+      name: 10
       rect:
         serializedVersion: 2
         x: 56
@@ -346,7 +346,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -359,7 +359,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_10
+      name: 11
       rect:
         serializedVersion: 2
         x: 104
@@ -367,7 +367,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -380,7 +380,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_11
+      name: 12
       rect:
         serializedVersion: 2
         x: 152
@@ -388,7 +388,7 @@ TextureImporter:
         width: 30
         height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,7 +401,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_12
+      name: 13
       rect:
         serializedVersion: 2
         x: 11
@@ -409,7 +409,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,7 +422,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_13
+      name: 14
       rect:
         serializedVersion: 2
         x: 59
@@ -430,7 +430,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -443,7 +443,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_14
+      name: 15
       rect:
         serializedVersion: 2
         x: 107
@@ -451,7 +451,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 12 - GH-GC_15
+      name: 16
       rect:
         serializedVersion: 2
         x: 155
@@ -472,7 +472,7 @@ TextureImporter:
         width: 25
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

@@ -16,10 +16,13 @@ public class ItemT : MonoBehaviour
     public Sprite m_sprite;
     public int Cost;
 
-
-    public void SetInfo(string name, Sprite sprite)
+    public void SetInfo(string Name, Sprite sprite, ItemT.Itemtype type, string mstats, string description, int cost)
     {
-        m_name = name;
+        m_name = Name;
         m_sprite = sprite;
+        Type = type;
+        stats = mstats;
+        descript = description;
+        Cost = cost;
     }
 }
