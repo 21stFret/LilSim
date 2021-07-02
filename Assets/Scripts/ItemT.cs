@@ -9,7 +9,8 @@ public class ItemT : MonoBehaviour
         Head,
         Torso,
         Gloves,
-        Feet
+        Feet,
+        None
     }
     public Itemtype Type;
     public string m_name, stats, descript;
